@@ -1,0 +1,52 @@
+Any: Es el supertipo raíz de todos los tipos en Kotlin
+y se puede usar como un tipo genérico cuando no se conoce el tipo específico que se va a usar.
+En pocas palabras Any es el tipo de dato que se llama implicitamente cuando no colocamos el tipo de dato
+al declarar una variable
+
+
+Unit: Representa la ausencia de un valor útil, es similar al tipo void en otros lenguajes
+y se usa para funciones que no devuelven un valor significativo.
+En otras palabras, unit es cuando realizamos una accion en nuestra funcion y esta no va a retornar ningun valor
+como hacer un print dentro de una funcion es decir acciones secundarias sin nigun retorno
+
+
+Nothing: Se utiliza para indicar que una función nunca regresa, ya sea porque entra en un bucle infinito,
+lanza una excepción o termina el programa. También se puede usar en la inferencia de tipos para situaciones
+donde necesitas asegurarte de que una función o expresión nunca regrese un valor útil.
+En otro termino, nothing en una función que no devuelve nada y asegurarte de que
+dicha función nunca termine su ejecución.
+
+
+
+NULABILIDAD
+En Kotlin, los tipos de datos pueden ser nulos o no nulos. Cuando un tipo de dato puede ser nulo,
+significa que puede contener un valor válido o también puede ser nulo, lo que indica que no contiene ningún valor.
+Para representar la posibilidad de que un valor sea nulo, se utiliza el operador ?.
+
+Por ejemplo, tenemos dos tipos de datos:
+
+String: Es un tipo de dato que no puede ser nulo. Siempre contendrá un valor de texto válido.
+String?: Es un tipo de dato que puede ser nulo. Puede contener un valor de texto o simplemente ser nulo.
+kotlin
+
+val textoNoNulo: String = "Hola, soy un texto no nulo"
+val textoPosiblementeNulo: String? = null // Aquí el valor es nulo
+
+
+Operador Elvis (?:):
+
+El operador Elvis es una forma concisa de manejar valores nulos en Kotlin. Se denota con ?:.
+Su función es proporcionar un valor predeterminado o alternativo en caso de que la expresión inicial sea nula.
+
+Sintaxis: expresion ?: valorAlternativo
+
+Si expresion no es nula, el resultado será expresion, pero si expresion es nula, el resultado será valorAlternativo.
+
+
+Ejemplo:
+val nombre: String? = obtenerNombreDesdeAlgunaFuente()
+val nombreParaMostrar: String = nombre ?: "Nombre desconocido"
+
+En este ejemplo, nombre es un valor posiblemente nulo que se obtiene desde alguna fuente externa.
+Si nombre contiene un valor, se usará ese valor en la variable nombreParaMostrar.
+Pero si nombre es nulo, el valor predeterminado "Nombre desconocido" se utilizará en lugar de mostrar un valor nulo.
